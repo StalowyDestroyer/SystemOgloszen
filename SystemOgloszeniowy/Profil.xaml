@@ -39,7 +39,7 @@
                 <RowDefinition Height="100"></RowDefinition>
             </Grid.RowDefinitions>
             <Image Source="C:\Users\patry\Desktop\SystemOgloszeniowy\SystemOgloszeniowy\user.png" Height="50" Width="50" Grid.ColumnSpan="2"></Image>
-            <Label Content="Witaj, cośtam nwm kill me !" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+            <Label Content="Witaj, !" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
             <Label Content="Data urodzenia:" Grid.Row="2"></Label>
             <Label Content="E-mail:" Grid.Row="3"></Label>
             <Label Content="Numer telefonu:" Grid.Row="4"></Label>
