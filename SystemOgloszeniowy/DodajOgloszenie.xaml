@@ -1,0 +1,102 @@
+﻿<Window x:Class="SystemOgloszeniowy.DodajOgloszenie"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemOgloszeniowy"
+        mc:Ignorable="d"
+        Title="DodajOgloszenie" Height="900" Width="450">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.ColumnSpan="2">
+            <StackPanel Height="15" Background="DodgerBlue"></StackPanel>
+            <StackPanel Height="30" Margin="0,5,0,0" Background="LightSkyBlue"></StackPanel>
+        </StackPanel>
+        
+        <Label Content="Tytul:" FontSize="14" Grid.Row="1" />
+        <TextBox x:Name="TxBTytul" FontSize="16" Height="25" Grid.Row="1" Grid.Column="1" Width="200"/>
+
+        <Label Content="Nazwa stanowiska:" FontSize="14" Grid.Row="2" />
+        <TextBox x:Name="TxBNazwaStanowiska" FontSize="16" Height="25" Grid.Column="1" Grid.Row="2" Width="200" />
+
+        <Label Content="Poziom stanowiska:" FontSize="14" Grid.Row="3"/>
+        <TextBox x:Name="TxBPoziomStanowiska"  FontSize="16" Height="25" Grid.Column="1" Grid.Row="3" Width="200" />
+
+        <Label Content="Rodzaj pracy:" FontSize="14" Grid.Row="4"/>
+        <TextBox x:Name="TxBRodzajPracy" FontSize="16" Height="25" Grid.Column="1" Grid.Row="4" Width="200" />
+
+        <Label Content="Wymiar zatrudnienia:" FontSize="14" Grid.Row="5" />
+        <TextBox x:Name="TxBWymiarZatrudnienia" FontSize="16" Height="25" Grid.Column="1" Grid.Row="5" Width="200" />
+
+        <Label Content="Rodzaj umowy:" FontSize="14"  Grid.Row="6" />
+        <TextBox x:Name="TxBRodzajUmowy"  FontSize="16" Height="25" Grid.Column="1" Grid.Row="6" Width="200" />
+
+        <Label Content="Najmn wynagrodz:" FontSize="14" Grid.Row="7" />
+        <TextBox x:Name="TxBNajmniejszeWynagrodzenie"  FontSize="16" Height="25" Grid.Column="1" Grid.Row="7" Width="200" />
+
+        <Label Content="Najw wynagrodz:" FontSize="14"  Grid.Row="8" />
+        <TextBox x:Name="TxBNajwiekszeWynagrodzenie" FontSize="16" Grid.Column="1" Grid.Row="8" Height="25" Width="200" />
+
+        <Label Content="Dni pracy:" FontSize="14" Grid.Row="9" />
+        <TextBox x:Name="TxBDniPracy" FontSize="16" Height="25" Grid.Column="1" Grid.Row="9" Width="200" />
+
+        <Label Content="Godziny pracy:" FontSize="14" Grid.Row="10" />
+        <TextBox x:Name="TxBGodzinyPracy" FontSize="16" Height="25" Grid.Column="1" Grid.Row="10" Width="200" />
+
+        <Label Content="Data ważności:" FontSize="14" Grid.Row="11"/>
+        <DatePicker x:Name="TxBDataWaznosci" FontSize="16" Height="30" Grid.Column="1" Grid.Row="11" Width="200"/>
+
+        <Label Content="Obowiązki:" FontSize="14" Grid.Row="12" />
+        <TextBox x:Name="TxBObowiazki" FontSize="16" Height="25" Grid.Column="1" Grid.Row="12" Width="200" />
+
+        <Label Content="Wymagania:" FontSize="14" Grid.Row="13" />
+        <TextBox x:Name="TxBWymagania" FontSize="16" Height="25" Grid.Column="1" Grid.Row="13" Width="200" />
+
+        <Label Content="Benefity:" FontSize="14"  Grid.Row="14" />
+        <TextBox x:Name="TxBBenefity"  FontSize="16" Height="25" Grid.Column="1" Grid.Row="14" Width="200" />
+
+        <Label Content="Informacje:" FontSize="14" Grid.Row="15"/>
+        <TextBox x:Name="TxBInformacje"  FontSize="16" Height="25" Grid.Column="1" Grid.Row="15" Width="200" />
+
+        <Label Content="Zdjęcie:" FontSize="14" Grid.Row="16" />
+        <TextBox x:Name="TxBZdjecie"  FontSize="16" Height="25" Grid.Column="1" Grid.Row="16" Width="200" />
+
+        <Label Content="Firma:" FontSize="14" Grid.Row="17" />
+        <ComboBox x:Name="FirmaComboBox" DisplayMemberPath="FirmaNazwa" SelectedValuePath="FirmaId" SelectedValue="{Binding FirmaId}" Width="200" Height="25" Grid.Row="17" Grid.Column="1" Text="Kategorie"/>
+
+        <Label Content="Kategoria:" FontSize="14" HorizontalAlignment="Left" Grid.Row="18" />
+        <ComboBox x:Name="KategoriaComboBox" DisplayMemberPath="KategoriaNazwa" SelectedValuePath="Id" Grid.Column="1" Grid.Row="18"  SelectedValue="{Binding KategoriaId}" Width="200" Height="25" Text="Kategorie"/>
+
+        <Button x:Name="Dodaj"  Click="Dodaj_klik" Content="Dodaj" Grid.Row="19" Width="100" Grid.Column="1" Height="25"  Background="DodgerBlue" Foreground="White" />
+        <Button x:Name="Powrot"  Click="Powrot_klik" Content="Powrot" Grid.Row="19" Width="100" Height="25"  Background="DodgerBlue" Foreground="White" />
+        
+        <StackPanel Grid.Row="20" Background="DodgerBlue" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Bottom"></StackPanel>
+    </Grid>
+    
+</Window>

@@ -26,27 +26,28 @@
                 <ColumnDefinition Width="5*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Image Source="C:\Users\patry\Desktop\SystemOgloszeniowy\SystemOgloszeniowy\baner_strony.png" HorizontalAlignment="Left" Grid.ColumnSpan="3" Grid.Column="0" Opacity="0.2" Height="200"></Image>
-            <StackPanel Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" MouseEnter="label_profil_MouseEnter" MouseLeave="label_profil_MouseLeave" MouseLeftButtonDown="Profil_klik">
-                <Image Source="C:\Users\patry\Desktop\SystemOgloszeniowy\SystemOgloszeniowy\user.png" Width="50" Height="50"></Image>
-                <Label Content="PROFIL" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Tahoma" Foreground="DodgerBlue" x:Name="label_profil" FontSize="15" FontWeight="Bold"></Label>
+            <Image Source="Zdjecia/baner_strony.png" HorizontalAlignment="Left" Grid.ColumnSpan="3" Grid.Column="0" Opacity="0.2" Height="200"></Image>
+            <StackPanel Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" MouseEnter="label_profil_MouseEnter" MouseLeave="label_profil_MouseLeave" MouseLeftButtonDown="Profil_klik">
+                <Image Source="Zdjecia/User.png" Width="50" Height="50"></Image>
+                <Label Content="PROFIL" x:Name="uzytkownik" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Tahoma" Foreground="DodgerBlue" FontSize="15" FontWeight="Bold"></Label>
             </StackPanel>
-            
+            <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseEnter="label_ogloszenie_MouseEnter" MouseLeave="label_ogloszenie_MouseLeave" MouseLeftButtonDown="Dodaj">
+                <Image Source="Zdjecia/Ogloszenie.png" Width="50" Height="50"></Image>
+                <Label Content="Dodaj Ogloszenie" x:Name="ogloszenie" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Tahoma" Foreground="DodgerBlue" FontSize="15" FontWeight="Bold"></Label>
+            </StackPanel>
 
-            
-           
+
+
+
         </Grid>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+            <StackPanel Height="15" Background="DodgerBlue"></StackPanel>
+            <StackPanel Height="30" Margin="0,5,0,0" Background="LightSkyBlue"></StackPanel>
+        </StackPanel>
         <!--searchbar-->
         <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Grid.ColumnSpan="2">
             <TextBox x:Name="Textbox_Stanowisko" Width="200" VerticalAlignment="Center" FontSize="15" Height="30" Padding="5" Foreground="DodgerBlue"></TextBox>
-            <ComboBox Width="170" Text="kategoria" FontSize="15" Foreground="DodgerBlue" IsReadOnly="True"  SelectedIndex="0" Height="30">
-                <ComboBoxItem Content="Wszystkie kategorie"></ComboBoxItem>
-                <ComboBoxItem Content="Energetyka"></ComboBoxItem>
-                <ComboBoxItem Content="Ekonomia"></ComboBoxItem>
-                <ComboBoxItem Content="Produkcja"></ComboBoxItem>
-                <ComboBoxItem Content="Hotelarstwo"></ComboBoxItem>
-                <ComboBoxItem Content="Informatyka"></ComboBoxItem>
-            </ComboBox>
+            <ComboBox Width="170" Text="kategoria" SelectedValue="{Binding KategoriaId}"   SelectedValuePath="Id"  x:Name="KategoriaComboBox" FontSize="15" Foreground="DodgerBlue" IsReadOnly="True"  SelectedIndex="0" Height="30"></ComboBox>
             <TextBox x:Name="Textbox_Lokalizacja" Width="200" VerticalAlignment="Center" FontSize="15" Height="30" Padding="5" Foreground="DodgerBlue"></TextBox>
             <ComboBox Width="100" Text="Odleglosc" FontSize="15" Foreground="DodgerBlue" IsReadOnly="True"  SelectedIndex="0" Height="30">
                 <ComboBoxItem Content="10 km"></ComboBoxItem>
@@ -125,11 +126,55 @@
             </StackPanel>
         </Grid>
 
-        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
-            <StackPanel Height="15" Background="DodgerBlue"></StackPanel>
-            <StackPanel Height="30" Margin="0,5,0,0" Background="LightSkyBlue"></StackPanel>
-        </StackPanel>
+
         <Label Content="System ogloszeniowy" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" FontSize="30" FontFamily="Tahoma" Foreground="DodgerBlue" FontWeight="Black"></Label>
+
+        <ItemsControl Grid.Column="1" Grid.Row="3" ItemsSource="{Binding Path=Ogloszenia, UpdateSourceTrigger=PropertyChanged}" x:Name="OgloszenieWidok">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="1" MaxWidth="500" MaxHeight="300"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border >
+                        <Border.BorderBrush>
+                            <SolidColorBrush Color="DodgerBlue"></SolidColorBrush>
+                        </Border.BorderBrush>
+                        <Button Background="White">
+                            <StackPanel>
+                                <Grid Width="450">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="150"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Foreground="LightSkyBlue" Text="{Binding DataUtworzenia, StringFormat={}{0:dd.MM.yyyy}}"/>
+                                    <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Center" Foreground="DodgerBlue" FontWeight="Black" Margin="0,10,0,0" FontSize="15" Text="{Binding Tytul}"/>
+                                    <Image Grid.Row="1" Grid.Column="0" Source="{Binding Zdjecie}" HorizontalAlignment="Left" Width="100" Height="100"/>
+
+                                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right">
+                                        <TextBlock Foreground="LightSkyBlue" Text="{Binding NajmniejszeWynagrodzenie}" />
+                                        <TextBlock Foreground="LightSkyBlue" Text="-" />
+                                        <TextBlock Foreground="LightSkyBlue" Text="{Binding NajwiekszeWynagrodzenie}" />
+                                        <TextBlock Foreground="LightSkyBlue" Text=" zł/ mies" />
+                                    </StackPanel>
+
+
+                                    <TextBlock  Text="{Binding Informacje}" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightSkyBlue"></TextBlock>
+                                </Grid>
+                            </StackPanel>
+                        </Button>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+
         <!--stopka-->
         <StackPanel Grid.Row="5" Background="DodgerBlue" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Bottom"></StackPanel>
     </Grid>

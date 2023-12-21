@@ -17,37 +17,30 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Image Source="C:\Users\patry\Desktop\SystemOgloszeniowy\SystemOgloszeniowy\baner_strony.png" HorizontalAlignment="Left" Grid.ColumnSpan="3" Grid.Column="0" Opacity="0.2" Height="200"></Image>
+            <Image Source="Zdjecia/baner_strony.png" HorizontalAlignment="Left" Grid.ColumnSpan="3" Grid.Column="0" Opacity="0.2" Height="200"></Image>
 
-            <Label Content="Logowanie" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" FontSize="20" FontFamily="Tahoma" Foreground="DodgerBlue" FontWeight="Black"></Label>
+            <Label Content="Rejestracja" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" FontSize="20" FontFamily="Tahoma" Foreground="DodgerBlue" FontWeight="Black"></Label>
             <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
                 <StackPanel Height="10" Background="DodgerBlue"></StackPanel>
                 <StackPanel Height="20" Margin="0,5,0,0" Background="LightSkyBlue"></StackPanel>
             </StackPanel>
             <Label Content="Login: " Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
             <TextBox x:Name="textbox_login" Height="25" Width="150" Grid.Row="2" Grid.Column="1"></TextBox>
-            <Label Content="Haslo: " Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
-            <TextBox x:Name="textbox_haslo" Height="25" Width="150" Grid.Row="3" Grid.Column="1"></TextBox>
-            <Label Content="Powtórz haslo: " Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
-            <TextBox x:Name="textbox_powtorzHaslo" Height="25" Width="150" Grid.Row="4" Grid.Column="1"></TextBox>
-            <Label Content="Imie: " Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
-            <TextBox x:Name="textbox_imie" Height="25" Width="150" Grid.Row="5" Grid.Column="1"></TextBox>
-            <Label Content="Nazwisko: " Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
-            <TextBox x:Name="textbox_nazwisko" Height="25" Width="150" Grid.Row="6" Grid.Column="1"></TextBox>
-            <Label Content="Miejsce zamieszkania: " Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
-            <TextBox x:Name="textbox_miejsceZamieszkania" Height="25" Width="150" Grid.Row="7" Grid.Column="1"></TextBox>
+            <Label Content="E-mail: " Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+            <TextBox x:Name="textbox_email" Height="25" Width="150" Grid.Row="3" Grid.Column="1"></TextBox>
+            <Label Content="Haslo: " Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+            <PasswordBox x:Name="textbox_haslo" Height="25" Width="150" Grid.Row="4" Grid.Column="1"></PasswordBox>
+            <Label Content="Powtórz haslo: " Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+            <PasswordBox x:Name="textbox_powtorzHaslo" Height="25" Width="150" Grid.Row="5" Grid.Column="1"></PasswordBox>
 
-            <StackPanel Grid.ColumnSpan="2" Grid.Row="8" VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Content="Zarejestruj" Click="Zarejestruj_klik" HorizontalAlignment="Center" Width="100" Height="25" Margin="0,0,25,0"></Button>
-            </StackPanel>
-            <StackPanel Grid.Row="9" Background="DodgerBlue" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Bottom"></StackPanel>
+            <Button Grid.Row="6" Grid.Column="1" Content="Zarejestruj" Background="DodgerBlue" Foreground="White"  Click="Zarejestruj_klik" HorizontalAlignment="Center" Width="100" Height="25"></Button>
+            <Button Grid.Row="6"  Content="Powrot" Background="DodgerBlue" Foreground="White"  Click="Powrot_klik" HorizontalAlignment="Center" Width="100" Height="25"></Button>
+                <StackPanel Grid.Row="7" Background="DodgerBlue" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Bottom"></StackPanel>
         </Grid>
     </Grid>
 </Window>

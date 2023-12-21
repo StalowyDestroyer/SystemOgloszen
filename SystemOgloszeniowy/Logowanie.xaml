@@ -19,7 +19,7 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="2*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Image Source="C:\Users\patry\Desktop\SystemOgloszeniowy\SystemOgloszeniowy\baner_strony.png" HorizontalAlignment="Left" Grid.ColumnSpan="3" Grid.Column="0" Opacity="0.2" Height="200"></Image>
+        <Image Source="Zdjecia/baner_strony.png" HorizontalAlignment="Left" Grid.ColumnSpan="3" Grid.Column="0" Opacity="0.2" Height="200"></Image>
 
         <Label Content="Logowanie" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" FontSize="20" FontFamily="Tahoma" Foreground="DodgerBlue" FontWeight="Black"></Label>
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
@@ -29,11 +29,10 @@
         <Label Content="Login: " Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
         <TextBox x:Name="textbox_login" Height="25" Width="150" Grid.Row="2" Grid.Column="1"></TextBox>
         <Label Content="Haslo: " Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
-        <TextBox x:Name="textbox_haslo" Height="25" Width="150" Grid.Row="3" Grid.Column="1"></TextBox>
+        <PasswordBox x:Name="textbox_haslo" Height="25" Width="150" Grid.Row="3" Grid.Column="1"></PasswordBox>
         <StackPanel Grid.ColumnSpan="2" Grid.Row="4" VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="Zaloguj" HorizontalAlignment="Center" Width="100" Height="25" Click="Zaloguj_klik" Margin="0,0,25,0"></Button>
-
-            <Button Content="Zarejestruj się" HorizontalAlignment="Center" Width="100" Height="25" Margin="25,0,0,0" Click="Zarejestruj_klik"></Button>
+            <Button Content="Zaloguj" HorizontalAlignment="Center" Width="100" Height="25" Click="Zaloguj_klik" Margin="0,0,25,0"  Background="DodgerBlue" Foreground="White" ></Button>
+            <Button Content="Zarejestruj się" HorizontalAlignment="Center" Width="100" Height="25" Margin="25,0,0,0" Click="Zarejestruj_klik"  Background="DodgerBlue" Foreground="White" ></Button>
         </StackPanel>
         <StackPanel Grid.Row="5" Background="DodgerBlue" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Bottom"></StackPanel>
     </Grid>
